@@ -1,0 +1,159 @@
+.laptop_svg__animated {
+  animation: float 4s ease-in-out infinite;
+  transform-origin: center center; /* très important pour centrer l'animation */
+}
+/* =================================
+   ANIMATIONS POUR SVG PORTFOLIO
+   ================================= */
+
+/* =================================
+   1. ANIMATIONS DES ENGRENAGES
+   ================================= */
+
+/* Rotation continue pour les engrenages */
+@keyframes rotate-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotate-counter-clockwise {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(-360deg);
+  }
+}
+
+/* ENGRENAGES IDENTIFIÉS - Animation par transform-origin */
+
+/* Premier engrenage (violet/gris) */
+g[style*="transformOrigin: 271.787px 203.492px"] {
+  animation: rotate-clockwise 4s linear infinite;
+  transform-origin: 271.787px 203.492px;
+}
+
+/* Deuxième engrenage (plus grand, violet) */
+g[style*="transformOrigin: 282.541px 156.879px"] {
+  animation: rotate-counter-clockwise 6s linear infinite;
+  transform-origin: 282.541px 156.879px;
+}
+
+/* Troisième engrenage (noir/gris foncé) */
+g[style*="transformOrigin: 237.146px 186.86px"] {
+  animation: rotate-clockwise 8s linear infinite;
+  transform-origin: 237.146px 186.86px;
+}
+
+/* =================================
+   2. ANIMATION DU NUAGE API
+   ================================= */
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.api-cloud {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* =================================
+   3. ANIMATIONS DES CONNEXIONS
+   ================================= */
+
+@keyframes pulse-line {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+.connection-line {
+  animation: pulse-line 2s ease-in-out infinite;
+}
+
+/* =================================
+   4. ANIMATIONS DES ÉCRANS
+   ================================= */
+
+@keyframes screen-glow {
+  0%, 100% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.1);
+  }
+}
+
+.screen-element {
+  animation: screen-glow 3s ease-in-out infinite;
+}
+
+/* Animation de typing pour les codes */
+@keyframes typing-cursor {
+  0%, 50% {
+    opacity: 1;
+  }
+  51%, 100% {
+    opacity: 0;
+  }
+}
+
+.typing-cursor {
+  animation: typing-cursor 1s infinite;
+}
+
+/* =================================
+   5. ANIMATIONS TABLETTE/MOBILE
+   ================================= */
+
+/* Animation de léger balancement pour la tablette */
+@keyframes device-sway {
+  0%, 100% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(0.5deg);
+  }
+  75% {
+    transform: rotate(-0.5deg);
+  }
+}
+
+/* Sélecteur pour le groupe de la tablette (basé sur transform-origin) */
+g[style*="transformOrigin: 240.443px 422.283px"] {
+  animation: device-sway 4s ease-in-out infinite;
+}
+
+/* Effet de glow sur l'écran de la tablette */
+@keyframes screen-pulse {
+  0%, 100% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+/* Animation pour l'écran de la tablette */
+path[style*="fill: #455a64"] {
+  animation: screen-pulse 3s ease-in-out infinite;
+}
+
+/* =================================
+   PROCHAINES ANIMATIONS À AJOUTER
+   ================================= */
+
+/* 6. Graphiques qui montent */
+/* 7. Flux de données */
