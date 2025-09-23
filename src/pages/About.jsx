@@ -4,6 +4,7 @@ import cssLogo from "../assets/illustrations/css.png";
 import reactLogo from "../assets/illustrations/react.png";
 import laravelLogo from "../assets/illustrations/laravel.png";
 import Tailwind_CSS from "../assets/illustrations/Tailwind_CSS.png";
+import profil from "../assets/profil.svg";
 
 
 const About = () => {
@@ -30,7 +31,7 @@ const About = () => {
                 style={{
       filter: 'drop-shadow(0 25px 25px rgba(147, 51, 234, 0.5))'
     }}
-              src="src/assets/profil.svg"
+              src={profil}
               alt="profil"
             />
         </div>

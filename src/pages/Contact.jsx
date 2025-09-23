@@ -222,7 +222,7 @@ const Contact = () => {
                 </div>
                 <div>
                   <p className="text-primary-content/70 text-sm">Site web:</p>
-                  <p className="font-semibold">www.portfolio.com</p>
+                  <p className="font-semibold">https://portfolio-rho-wheat-97.vercel.app/</p>
                 </div>
               </div>
             </div>
