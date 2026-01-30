@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import emailjs from "@emailjs/browser";
+
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -15,12 +17,38 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    // Ici vous pouvez ajouter la logique d'envoi
-    console.log("Form submitted:", formData);
-    alert("Message envoyé avec succès !");
-  };
+ const handleSubmit = (e) => {
+  e.preventDefault();
+
+  emailjs
+    .send(
+      import.meta.env.VITE_EMAILJS_SERVICE_ID,
+      import.meta.env.VITE_EMAILJS_TEMPLATE_ID,
+      {
+        name: formData.name,
+        email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+      },
+      import.meta.env.VITE_EMAILJS_PUBLIC_KEY
+    )
+    .then(
+      () => {
+        alert("Message envoyé avec succès 🚀");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      },
+      (error) => {
+        console.error(error);
+        alert("Erreur lors de l'envoi ❌");
+      }
+    );
+};
+
 
   return (
     <section className="min-h-screen bg-base-100 py-20">

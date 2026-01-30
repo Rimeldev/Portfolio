@@ -10,16 +10,7 @@ function App() {
     <div className="min-h-screen">
       {/* Navigation fixe */}
       <div className="fixed top-4 left-0 right-0 z-50 flex justify-center">
-        <PillNav
-          items={[
-            { label: "Accueil", href: "#home" },
-            { label: "À propos", href: "#about" },
-            { label: "Projets", href: "#projects" },
-            { label: "Contact", href: "#contact" },
-          ]}
-          activeHref="#home"
-          className="custom-nav"
-        />
+        <PillNav/>
       </div>
 
       {/* Contenu principal */}

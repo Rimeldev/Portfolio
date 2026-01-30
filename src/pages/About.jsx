@@ -4,8 +4,8 @@ import cssLogo from "../assets/illustrations/css.png";
 import reactLogo from "../assets/illustrations/react.png";
 import laravelLogo from "../assets/illustrations/laravel.png";
 import Tailwind_CSS from "../assets/illustrations/Tailwind_CSS.png";
-import profil from "../assets/profil.svg";
-
+import next from "../assets/illustrations/next.png";
+import Me from "../assets/illustrations/Me.png";
 
 const About = () => {
   const tools = [
@@ -14,53 +14,70 @@ const About = () => {
     { name: "React", src: reactLogo },
     { name: "Laravel", src: laravelLogo },
     { name: "Tailwind CSS", src: Tailwind_CSS },
+    { name: "Next.js", src: next },
   ];
 
   return (
-    <section className="container mx-auto px-10 md:px-20">
-       <div className="text-center mb-16">
-    <h2 className="text-5xl md:text-6xl font-bold text-base-content mb-4">À propos</h2>
-      <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
-       </div>
-  
+    <section className="container mx-auto px-6 md:px-20 py-18">
+      
+      {/* Title */}
+      <div className="text-center mb-20">
+        <h2 className="text-5xl md:text-6xl font-bold text-base-content mb-4">
+          About Me
+        </h2>
+        <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
+      </div>
 
-      <div className="flex flex-col md:flex-row items-center justify-between gap-10 mt-20">
-         <div className="flex justify-end">
-            <img
-              className="hover:scale-105 transition-transform duration-400 w-100"
-                style={{
-      filter: 'drop-shadow(0 25px 25px rgba(147, 51, 234, 0.5))'
-    }}
-              src={profil}
-              alt="profil"
-            />
+      <div className="flex flex-col md:flex-row items-center gap-16">
+
+        {/* PHOTO CARD */}
+        <div className="relative">
+          {/* Background card */}
+          <div className="w-72 h-96 rounded-3xl bg-gradient-to-br from-purple-600 to-indigo-800 shadow-xl"></div>
+
+          {/* Image */}
+          <img
+            src={Me}
+            alt="Yannick Bossa"
+            className="absolute top-[-20px] left-[-20px] w-72 h-96 object-cover rounded-3xl shadow-2xl"
+          />
+
+          {/* Decorative dot */}
+          <span className="absolute -top-6 -right-6 w-16 h-16 border-4 border-dashed border-purple-400 rounded-full"></span>
         </div>
-        <div className="text-lg max-w-lg ">
-          <span className="font-bold text-5xl leading-tight  ">Developpeur <br/> Front-end</span><br/>
-         <p className="text-justify mt-4 ">Je suis un développeur front-end passionné, spécialisé dans la création d’interfaces web modernes et intuitives.  
-Mon expertise repose sur l’utilisation de technologies comme React, Tailwind CSS et Laravel, que j’intègre pour concevoir des solutions performantes et esthétiques. <br />
-Curieux et motivé, j’aime transformer des idées en projets concrets qui offrent une réelle valeur ajoutée.
-Mon objectif est de développer des applications innovantes, accessibles et optimisées, afin d’apporter des expériences utilisateurs fluides et efficaces.  
 
+        {/* TEXT */}
+        <div className="max-w-xl">
+          <p className="text-lg text-gray-300 leading-relaxed">
+            I’m a frontend developer specialized in <span className="text-primary font-semibold">React</span>.  
+            I enjoy building clean, responsive, and scalable user interfaces.
+            I focus on turning ideas into real-world applications with great user experience.
           </p>
-          <h3 className="text-4xl mt-4 font-semibold mb-4">
-            Outils
+
+          <h3 className="text-3xl font-semibold mt-10 mb-6 text-base-content">
+            Tools & Technologies
           </h3>
-          <div className="grid grid-cols-4 gap-4">
+
+          {/* TOOLS */}
+          <div className="grid grid-cols-3 sm:grid-cols-4 gap-5">
             {tools.map((tool) => (
-          // button pour l'accessibilité (focus clavier) + aria-label
-          <button
-            key={tool.name}
-            aria-label={tool.name}
-            className="p-2 border-2 border-gray-300 rounded-lg flex items-center justify-center hover:scale-105 transition-transform duration-400 filter grayscale hover:grayscale-0 focus:grayscale-0"
-          >
-            <img
-              src={tool.src}
-              alt={`${tool.name} logo`}
-              className="w-12 h-12 object-contain"
-            />
-          </button>
-        ))}
+              <button
+                key={tool.name}
+                aria-label={tool.name}
+                className="p-4 rounded-xl bg-white/5 backdrop-blur border border-white/10
+                hover:bg-white/10 hover:scale-105 transition-all duration-300
+                focus:outline-none focus:ring-2 focus:ring-primary"
+              >
+                <img
+                  src={tool.src}
+                  alt={`${tool.name} logo`}
+                  className="w-12 h-12 mx-auto object-contain"
+                />
+                <p className="mt-2 text-sm text-center text-gray-400">
+                  {tool.name}
+                </p>
+              </button>
+            ))}
           </div>
         </div>
       </div>

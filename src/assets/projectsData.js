@@ -1,32 +1,32 @@
 import Hydroneximage from "../assets/illustrations/Hydronex.png";
 import Axi from "../assets/illustrations/Axi.png";
-import Agritracebio from "../assets/illustrations/Agritracebio.png";
+import Axidashboard from "../assets/illustrations/Axidashbord.png";
 import Entreprendre from "../assets/illustrations/Entreprendre.png";
 
 export const projects = [
  {
  title: "Axì",
     description: "Axì est Une plateforme numérique qui connecte les micro-entreprises aux utilisateurs à travers des stands digitaux, alliant la dynamique d’un réseau social au commerce local.",
-    stack: "React, Tailwind CSS",
+    stack: "Next, Tailwind CSS",
     image: Axi,
-    github: "https://github.com/Rimeldev/Axi_web.git",
-    demo: "https://axi-web.vercel.app/",
+    github: "https://github.com/Rimeldev/Axi",
+    demo: "https://axi-chi.vercel.app/",
   },
     {
- title: "AgriTraceBio",
-    description: "AgriTraceBio est une plateforme numérique innovante, basée sur la blockchain, qui assure la traçabilité en temps réel de l’ananas béninois tout au long de la chaîne de valeur, grâce à l’intégration des données issues de l’IoT.",
+ title: "Dashboard Axi",
+    description: "Dashboard de la plateforme Axì, permettant aux administrateurs de gérer les utilisateurs, les micro-entreprises et les contenus de la plateforme.",
     stack: "React, Tailwind CSS",
-    image: Agritracebio,
-    github: "https://github.com/Rimeldev/Agritracebio.git",
-    demo: "https://agritracebio.vercel.app/",
+    image: Axidashboard,
+    github: "https://github.com/Rimeldev/Axi-Project",
+    demo: "https://axi-project.vercel.app/dashboard",
   },
     {
  title: "Hydronex",
     description: "HydroNex est une solution IoT flottante innovante conçue pour la surveillance en temps réel de la qualité de l’eau et de la salinité côtière.",
     stack: "React, Tailwind CSS",
     image: Hydroneximage,
-    github: "",
-    demo: "https://hydronex-kappa.vercel.app/dashboard",
+    github: "https://github.com/Rimeldev/hydronex-project",
+    demo: "https://hydronex-project.vercel.app/",
   },
     {
  title: "Entreprendre à l'école",
