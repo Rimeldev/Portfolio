@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import emailjs from "@emailjs/browser";
 
 
+
+
 const Contact = () => {
   const [formData, setFormData] = useState({
     name: "",
@@ -9,6 +11,7 @@ const Contact = () => {
     subject: "",
     message: "",
   });
+  const [loading, setLoading] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -17,8 +20,10 @@ const Contact = () => {
     });
   };
 
- const handleSubmit = (e) => {
+const handleSubmit = (e) => {
   e.preventDefault();
+
+  setLoading(true);
 
   emailjs
     .send(
@@ -32,22 +37,23 @@ const Contact = () => {
       },
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
-    .then(
-      () => {
-        alert("Message envoyé avec succès 🚀");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: "",
-        });
-      },
-      (error) => {
-        console.error(error);
-        alert("Erreur lors de l'envoi ❌");
-      }
-    );
+    .then(() => {
+      alert("Message envoyé avec succès 🚀");
+      setFormData({
+        name: "",
+        email: "",
+        subject: "",
+        message: "",
+      });
+      setLoading(false);
+    })
+    .catch((error) => {
+      console.error(error);
+      alert("Erreur lors de l'envoi ❌");
+      setLoading(false);
+    });
 };
+
 
 
   return (
@@ -126,24 +132,30 @@ const Contact = () => {
               {/* Bouton d'envoi */}
               <div className="pt-4">
                 <button
-                  onClick={handleSubmit}
-                  className="btn btn-outline btn-primary hover:btn-primary group px-8 py-3 text-lg font-semibold transition-all duration-300 hover:scale-105"
-                >
-                  Envoyer le message
-                  <svg
-                    className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth={2}
-                      d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
-                    />
-                  </svg>
-                </button>
+  onClick={handleSubmit}
+  disabled={loading}
+  className={`btn btn-outline btn-primary group px-8 py-3 text-lg font-semibold transition-all duration-300 
+  ${loading ? "opacity-60 cursor-not-allowed" : "hover:scale-105 hover:btn-primary"}`}
+>
+  {loading ? "Envoi en cours..." : "Envoyer le message"}
+
+  {!loading && (
+    <svg
+      className="w-5 h-5 ml-2 transition-transform group-hover:translate-x-1"
+      fill="none"
+      stroke="currentColor"
+      viewBox="0 0 24 24"
+    >
+      <path
+        strokeLinecap="round"
+        strokeLinejoin="round"
+        strokeWidth={2}
+        d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"
+      />
+    </svg>
+  )}
+</button>
+
               </div>
             </div>
           </div>
