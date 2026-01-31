@@ -29,7 +29,7 @@ const Project = () => {
     alt={project.title}
     className="
       w-full 
-      h-48 sm:h-56 md:h-60 
+      h-45 sm:h-56 md:h-60 
       object-cover 
       group-hover:scale-105 
       transition-transform duration-500
