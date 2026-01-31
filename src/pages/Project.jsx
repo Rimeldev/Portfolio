@@ -23,14 +23,19 @@ const Project = () => {
             transition-all duration-300 shadow-lg"
           >
             {/* Image */}
-            <div className="overflow-hidden rounded-t-2xl">
-              <img
-                src={project.image}
-                alt={project.title}
-                className="w-full h-60 object-cover 
-                group-hover:scale-105 transition-transform duration-500"
-              />
-            </div>
+          <div className="overflow-hidden rounded-t-2xl">
+  <img
+    src={project.image}
+    alt={project.title}
+    className="
+      w-full 
+      h-48 sm:h-56 md:h-60 
+      object-cover 
+      group-hover:scale-105 
+      transition-transform duration-500
+    "
+  />
+</div>
 
             {/* Content */}
             <div className="p-6">
