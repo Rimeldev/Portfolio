@@ -38,7 +38,7 @@ const handleSubmit = (e) => {
       import.meta.env.VITE_EMAILJS_PUBLIC_KEY
     )
     .then(() => {
-      alert("Message envoyé avec succès 🚀");
+     alert("Message sent successfully 🚀");
       setFormData({
         name: "",
         email: "",
@@ -49,7 +49,7 @@ const handleSubmit = (e) => {
     })
     .catch((error) => {
       console.error(error);
-      alert("Erreur lors de l'envoi ❌");
+  alert("Failed to send message ❌");
       setLoading(false);
     });
 };
@@ -61,7 +61,7 @@ const handleSubmit = (e) => {
       <div className="container mx-auto px-6 md:px-20">
         <div className="text-center mb-16">
           <h2 className="text-5xl md:text-6xl font-bold text-base-content mb-4">
-            Contact
+            Contact Me
           </h2>
           <div className="w-24 h-1 bg-primary mx-auto rounded-full"></div>
         </div>
@@ -69,11 +69,9 @@ const handleSubmit = (e) => {
         <div className="flex flex-col lg:flex-row gap-0 max-w-6xl mx-auto shadow-2xl rounded-2xl overflow-hidden">
           {/* Formulaire - Côté gauche */}
           <div className="bg-base-300 p-8 md:p-12 lg:w-1/2">
-            <h3 className="text-2xl font-bold text-base-content mb-2">
-              Envoyez un message
-            </h3>
+           
             <p className="text-base-content/70 mb-8">
-              Je suis ouvert aux collaborations, contactez-moi ci-dessous.
+              I am open to collaborations and opportunities. Feel free to reach out using the form below.
             </p>
 
             <div className="space-y-6">
@@ -82,7 +80,7 @@ const handleSubmit = (e) => {
                 <input
                   type="text"
                   name="name"
-                  placeholder="Nom complet"
+                  placeholder="Full name"
                   value={formData.name}
                   onChange={handleChange}
                   className="input input-bordered w-full bg-transparent border-0 border-b-2 border-base-content/20 focus:border-primary focus:outline-none rounded-none pb-3 text-base-content placeholder-base-content/50"
@@ -95,7 +93,7 @@ const handleSubmit = (e) => {
                 <input
                   type="email"
                   name="email"
-                  placeholder="Adresse e-mail"
+                  placeholder="Email address"
                   value={formData.email}
                   onChange={handleChange}
                   className="input input-bordered w-full bg-transparent border-0 border-b-2 border-base-content/20 focus:border-primary focus:outline-none rounded-none pb-3 text-base-content placeholder-base-content/50"
@@ -108,7 +106,7 @@ const handleSubmit = (e) => {
                 <input
                   type="text"
                   name="subject"
-                  placeholder="Sujet"
+                  placeholder="Subject"
                   value={formData.subject}
                   onChange={handleChange}
                   className="input input-bordered w-full bg-transparent border-0 border-b-2 border-base-content/20 focus:border-primary focus:outline-none rounded-none pb-3 text-base-content placeholder-base-content/50"
@@ -120,7 +118,7 @@ const handleSubmit = (e) => {
               <div className="form-control">
                 <textarea
                   name="message"
-                  placeholder="Écrivez votre message..."
+                  placeholder="Write your message..."
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
@@ -137,7 +135,7 @@ const handleSubmit = (e) => {
   className={`btn btn-outline btn-primary group px-8 py-3 text-lg font-semibold transition-all duration-300 
   ${loading ? "opacity-60 cursor-not-allowed" : "hover:scale-105 hover:btn-primary"}`}
 >
-  {loading ? "Envoi en cours..." : "Envoyer le message"}
+  {loading ? "Sending..." : "Send Message"}
 
   {!loading && (
     <svg
@@ -162,9 +160,11 @@ const handleSubmit = (e) => {
 
           {/* Informations de contact - Côté droit */}
           <div className="bg-gradient-to-br from-primary to-secondary p-8 md:p-12 lg:w-1/2 text-primary-content">
-            <h3 className="text-2xl font-bold mb-2">Contactez-moi</h3>
+            <h3 className="text-2xl font-bold mb-2">Let's Talk
+</h3>
             <p className="text-primary-content/90 mb-10">
-              Je suis ouvert aux commissions, envoyez-moi un message ci-contre.
+              I am available for freelance work and collaborations. Feel free to send me a message.
+
             </p>
 
             <div className="space-y-8">
@@ -215,7 +215,7 @@ const handleSubmit = (e) => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-primary-content/70 text-sm">Adresse:</p>
+                  <p className="text-primary-content/70 text-sm">Location:</p>
                   <p className="font-semibold">Lokossa, Bénin</p>
                 </div>
               </div>
@@ -238,7 +238,7 @@ const handleSubmit = (e) => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-primary-content/70 text-sm">Téléphone:</p>
+                  <p className="text-primary-content/70 text-sm">Phone:</p>
                   <p className="font-semibold">+229 O1 94 17 97 42</p>
                 </div>
               </div>
@@ -261,7 +261,7 @@ const handleSubmit = (e) => {
                   </svg>
                 </div>
                 <div>
-                  <p className="text-primary-content/70 text-sm">Site web:</p>
+                  <p className="text-primary-content/70 text-sm">Website:</p>
                   <p className="font-semibold">https://portfolio-rho-wheat-97.vercel.app/</p>
                 </div>
               </div>
@@ -270,7 +270,7 @@ const handleSubmit = (e) => {
             {/* Réseaux sociaux */}
             <div className="mt-12">
               <p className="text-primary-content/70 text-sm mb-4">
-                Suivez-moi:
+               Follow me:
               </p>
               <div className="flex space-x-4">
                 <a

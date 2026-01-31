@@ -10,7 +10,7 @@ export default function Hero() {
         <div className="flex-1 text-center md:text-left">
           
           {/* Nom */}
-          <div className="text-3xl md:text-4xl font-mono text-purple-400 mb-2">
+          <div className="text-2xl md:text-4xl font-mono text-purple-400 mb-2">
             {"< BOSSA Yannick />"}
           </div>
 
